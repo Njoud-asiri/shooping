@@ -1,0 +1,86 @@
+<header>
+  <div class="logo">
+    <img src="images/logo.png" alt="Library Logo">
+  </div>
+
+  <nav class="nav-menu">
+    <a href="index.html">الرئيسية</a>
+    <a href="books.html">الكتب</a>
+    <a href="#">الأعضاء</a>
+    <a href="#">الإعارات</a>
+    <a href="#">تواصل</a>
+  </nav>
+
+  <style>
+    header {
+      background: #3b3b98;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 130px;
+      padding: 10px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      z-index: 1000;
+    }
+
+    .logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid #f1c40f;
+      background: #fff;
+      object-fit: cover;
+      margin-bottom: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.1);
+    }
+
+    .nav-menu {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .nav-menu a:hover {
+      color: #f1c40f;
+    }
+
+    /* ✅ تصميم متجاوب */
+    @media (max-width: 768px) {
+      header {
+        height: auto;
+        padding: 15px 10px;
+      }
+
+      .logo img {
+        width: 65px;
+        height: 65px;
+      }
+
+      .nav-menu {
+        gap: 15px;
+      }
+
+      .nav-menu a {
+        font-size: 14px;
+      }
+    }
+  </style>
+</header>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>الكتب | نظام إدارة المكتبة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Tahoma', sans-serif;
+      background: #f7f8fa;
+      padding-top: 140px;
+      padding-bottom: 80px;
+    }
+
+    main {
+      padding: 30px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #3b3b98;
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .book-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .book-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .book-card h3 {
+      color: #3b3b98;
+      margin: 10px 0 5px;
+    }
+
+    .book-card p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    /* ✅ متجاوب */
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 26px;
+      }
+
+      .book-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <main>
+    <h2>📖 قائمة الكتب المتاحة</h2>
+    <div class="books-grid">
+      <div class="book-card">
+        <img src="images/book1.jpg" alt="Book 1">
+        <h3>مقدمة في البرمجة بلغة بايثون</h3>
+        <p>تأليف: محمد السعيد</p>
+      </div>
+      <div class="book-card">
+        <img src="images/book2.jpg" alt="Book 2">
+        <h3>مدخل إلى قواعد البيانات</h3>
+        <p>تأليف: نجلاء العتيبي</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    async function loadComponent(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    }
+    loadComponent("header", "header.html");
+    loadComponent("footer", "footer.html");
+  </script>
+</body>
+</html>

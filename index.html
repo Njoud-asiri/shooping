@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>الرئيسية | نظام إدارة المكتبة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Tahoma', sans-serif;
+      background: #f7f8fa;
+      padding-top: 140px;
+      padding-bottom: 80px;
+    }
+
+    main {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    main h2 {
+      font-size: 36px;
+      color: #3b3b98;
+      margin-bottom: 15px;
+    }
+
+    main p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    button {
+      background: #3b3b98;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #f1c40f;
+      color: #3b3b98;
+    }
+
+    /* ✅ متجاوب */
+    @media (max-width: 600px) {
+      main h2 {
+        font-size: 28px;
+      }
+      main p {
+        font-size: 16px;
+      }
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <main>
+    <h2>📚 مرحبًا بك في نظام إدارة المكتبة</h2>
+    <p>استعرض الكتب، أضف الأعضاء، وتتبع الإعارات بسهولة واحترافية.</p>
+    <button onclick="window.location.href='books.html'">عرض الكتب</button>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    async function loadComponent(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    }
+    loadComponent("header", "header.html");
+    loadComponent("footer", "footer.html");
+  </script>
+</body>
+</html>
